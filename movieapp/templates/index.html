@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}<hr>
+        <div class="cal=md-3">
+            <div class="card" style="width: 18rem;" height="250">
+                <img class="card-img-top" src="{{i.img.url}}"  height="250" width="250">
+    <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+<!--    <p class="card-text"></p>-->
+    <a href="{% url 'movieapp:detail' i.id %}" class="btn btn-primary">show details</a>
+
+
+  </div>
+</div>
+
+        </div>
+
+       {% endfor %}
+    </div><br>
+<center>
+    <button class="btn btn-warning" onclick="window.location.href = 'http://127.0.0.1:8000/add/';" name="add_movie" >
+  Add Movie
+ </button>
+    </center>
+
+
+</div>
+
+<!--<a href ="add.html">-->
+
+{% endblock %}
